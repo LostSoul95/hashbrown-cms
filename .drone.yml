@@ -5,11 +5,7 @@ pipeline:
   test:
     image: node:latest
     commands: npm run test
-  services:
-    - name: database
-      image: mongo:latest
-      ports:
-      - 27017
+
 
 
 
