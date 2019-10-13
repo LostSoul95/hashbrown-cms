@@ -1,12 +1,12 @@
 pipeline:
-
-build:
-- name: publish  
-  image: plugins/ecr
-  settings:
-    repo: 67794846884.dkr.ecr.us-east-1.amazonaws.com/hash-brown
-    registry: 67794846884.dkr.ecr.us-east-1.amazonaws.com
-    dockerfile: /home/madhurkatyal/Dotnet-Core-Projects/hashbrown-cms
+  build:
+    image: plugins/ecr
+    commands: docker push 67794846884.dkr.ecr.region.amazonaws.com/hash-brown
+    settings:
+      repo: 67794846884.dkr.ecr.us-east-1.amazonaws.com/hash-brown
+      registry: 67794846884.dkr.ecr.us-east-1.amazonaws.com
+      dockerfile: /home/madhurkatyal/Dotnet-Core-Projects/hashbrown-cms
+ 
 
 
 
