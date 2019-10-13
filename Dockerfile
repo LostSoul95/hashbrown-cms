@@ -1,21 +1,20 @@
 # The docker image to be send onto the container registry.
+# Non traditional approach for Node.js Build
+
+
 
 FROM node:10
 
-# Create app directory
+ADD package.json /tmp/package.json
+
+RUN cd /tmp && npm install
+
+RUN mkdir -p /usr/src/app && cp -a /tmp/node_modules /usr/src/app/
+
 WORKDIR /usr/src/app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+COPY . /usr/src/app/
 
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
+CMD [ "npm", "start" ]
 
-# Bundle app source
-COPY . .
-
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+EXPOSE 4000
