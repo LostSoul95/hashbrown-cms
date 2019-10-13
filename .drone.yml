@@ -5,7 +5,7 @@ pipeline:
   test:
     image: node:latest
     commands: npm run test
-steps:
+build:
 - name: publish  
   image: plugins/ecr
   settings:
