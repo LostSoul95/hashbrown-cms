@@ -9,8 +9,8 @@ steps:
 - name: publish  
   image: plugins/ecr
   settings:
-    repo: 123456789012.dkr.ecr.us-east-1.amazonaws.com/hash-brown
-    registry: 123456789012.dkr.ecr.us-east-1.amazonaws.com
+    repo: 67794846884.dkr.ecr.us-east-1.amazonaws.com/hash-brown
+    registry: 67794846884.dkr.ecr.us-east-1.amazonaws.com
     dockerfile: /home/madhurkatyal/Dotnet-Core-Projects/hashbrown-cms
 
 
